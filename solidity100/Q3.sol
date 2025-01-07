@@ -19,12 +19,14 @@ contract Q2 {
     }
 }
 
-// 3. 3의 배수라면 “A”를, 나머지가 1이 있다면 “B”를, 나머지가 2가 있다면 “C”를 반환하는 함수를 구현하세요.
+// 3. 5의 배수라면 “A”를, 나머지가 1이면 “B”를, 나머지가 2면 “C”를, 나머지가 3이면 “D”, 나미저가 4면 “E”를 반환하는 함수를 구현하세요.
 contract Q3 {
     function minus(uint _v) public pure returns(string memory){
-        if(_v % 3 == 0) return "A";
-        else if(_v % 3 == 1) return "B";
-        else return "C";
+        if(_v % 5 == 0) return "A";
+        else if(_v % 5 == 1) return "B";
+        else if(_v % 5 == 2) return "C";        
+        else if(_v % 5 == 3) return "D";
+        else return "E";
     }
 }
 
