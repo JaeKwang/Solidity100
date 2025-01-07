@@ -107,9 +107,6 @@ contract Q9 {
 */
 contract Q10 {
     function pushNum(uint[] memory _input) public pure returns (uint[] memory) {
-        uint min = type(uint).max;
-        uint index;
-
         for(uint i = 0; i < _input.length-1; i++) {
             for(uint j = i+1; j < _input.length; j++) {
                 if(_input[i] < _input[j]) (_input[i],  _input[j]) = (_input[j],  _input[i]) ;
