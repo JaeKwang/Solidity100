@@ -106,18 +106,21 @@ contract Q5 {
 
 // 6. high, neutral, low 상태를 구현하세요. a라는 변수의 값이 7이상이면 high, 4이상이면 neutral 그 이후면 low로 상태를 변경시켜주는 함수를 구현하세요.
 contract Q6 {
+    enum State {
+        high,
+        neutral,
+        low
+    }
+    State public state;
     uint a;
 
     function setA(uint _v) public {
         a = _v;
-    }
 
-    function getState() public view returns (string memory) {
-        if(a >= 7) return "high";
-        else if(a >= 4) return "neutral";
-        else return "low";
+        if(a >= 7) state = State.high;
+        else if(a >= 4) state = State.neutral;
+        else state = State.low;
     }
-
 }
 
 /*
