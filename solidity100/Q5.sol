@@ -46,22 +46,22 @@ contract Q2 {
 
 // 3. 은행의 역할을 하는 contract를 만드려고 합니다. 별도의 고객 등록 과정은 없습니다. 해당 contract에 ether를 예치할 수 있는 기능을 만드세요. 또한, 자신이 현재 얼마를 예치했는지도 볼 수 있는 함수 그리고 자신이 예치한만큼의 ether를 인출할 수 있는 기능을 구현하세요.
 contract Q3 {
-    mapping (address => uint) ballance;
+    mapping (address => uint) balance;
 
     function deposit() public payable {
         require(msg.sender != address(0), "Not be 0 address");
-        ballance[msg.sender] += msg.value;
+        balance[msg.sender] += msg.value;
     }
 
     function withdrawAll() public payable {
-        require(ballance[msg.sender] != 0, "insufficient balance");
+        require(balance[msg.sender] != 0, "insufficient balance");
 
-        payable(msg.sender).transfer(ballance[msg.sender]);
-        ballance[msg.sender] = 0;
+        payable(msg.sender).transfer(balance[msg.sender]);
+        balance[msg.sender] = 0;
     }
 
-    function getBallance() public view returns (uint) {
-        return ballance[msg.sender];
+    function getBalance() public view returns (uint) {
+        return balance[msg.sender];
     }
 }
 
