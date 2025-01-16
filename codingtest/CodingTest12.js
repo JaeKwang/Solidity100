@@ -17,7 +17,7 @@ Pool은 최소한 3개 사용하고 그 평균값을 최종값으로 계산하�
 */
 
 import Web3, { Contract } from 'web3';
-var web3 = new Web3('https://mainnet.infura.io/v3/1d099f0b07c14641ad70416d176424c7')
+var web3 = new Web3('https://mainnet.infura.io/v3/ ***API_KEY*** ')
 
 // WISE/ETH v2
 {
