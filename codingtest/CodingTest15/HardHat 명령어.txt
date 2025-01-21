@@ -1,0 +1,27 @@
+/********************* 1) hardhat 프로젝트 시작  *********************/
+ > npm init
+ > npm install --save hardhat
+ > npm install --save -dev @nomicfoundation/hardhat-toolbox
+
+ > npx hardhat init
+// [Create an empty hardhat.config.js] 선택
+// contracts 폴더 생성
+// 생성한 contracts 폴더에 Prac15.sol 파일 생성 및 작성
+
+/********************* 2) contract 컴파일  *********************/
+ > npm install @openzeppelin/contracts
+ > npx hardhat compile
+
+/********************* 3) contract local testnet에 배포  *********************/
+// ignition/modules 폴더 생성
+// 생성한 ignition/modules 경로에 deploy.js 파일 생성 및 작성
+ > npx hardhat node
+ > npx hardhat ignition deploy .\ignition\modules\deploy.js --network localhost
+
+/********************* 4) contract sepolia testnet에 배포  *********************/
+// hardhat.config.js 파일에 Private Key, API Key 등 네트워크 세팅 스크립트를 작성
+ > npx hardhat ignition deploy .\ignition\modules\deploy.js --network sepolia
+
+/********************* 5) sepolia에 배포된 contract verify   *********************/
+// ignition/deployments 폴더에 생성된 deployment ID를 명령어에 추가
+ > npx hardhat ignition verify chain-11155111
