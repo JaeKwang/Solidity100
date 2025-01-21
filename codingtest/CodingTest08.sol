@@ -25,7 +25,7 @@ contract CodingTest08 {
     }
 
     uint public fuel;
-    uint public ballance;
+    uint public balance;
     uint public speed;
     carState public carStart;
 
@@ -41,10 +41,10 @@ contract CodingTest08 {
 
     // 2. 주유 기능 - 주유하는 기능, 주유를 하면 1eth를 지불해야하고 연료는 100이 됨
     function oiling() public payable { // 1234567890123456789 wei
-        uint myBallance = ballance + msg.value;
-        require(myBallance >= 1 ether, "Pay more than 1 Ether");
+        uint myBalance = balance + msg.value;
+        require(myBalance >= 1 ether, "Pay more than 1 Ether");
 
-        ballance = myBallance - 1 ether;
+        balance = myBalance - 1 ether;
         fuel += 100;
     }
 
@@ -74,6 +74,6 @@ contract CodingTest08 {
     function chargeCost() public payable {
         require(msg.value > 0, "Deposit a value greater than 0");
 
-        ballance += msg.value;
+        balance += msg.value;
     }
 }

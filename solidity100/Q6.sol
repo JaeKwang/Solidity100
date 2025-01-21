@@ -30,7 +30,7 @@ contract Q52 {
 contract Q53 {
     mapping(string => mapping(address => uint)) bank;
 
-    function getBallance(string memory _bank) public view returns (uint) {
+    function getBalance(string memory _bank) public view returns (uint) {
         return bank[_bank][msg.sender];
     }
 
